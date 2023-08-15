@@ -59,7 +59,7 @@ apt update && apt install -y curl jq
 
 ```
 REMOTE_HOST=some.server.com
-REMOTE_PORT=51820
+REMOTE_PORT=64451
 UPDATE_HOSTS='/etc/hosts'
 
 # Change if using nginx with custom prefix for added security
@@ -80,7 +80,7 @@ UPDATE_HOSTS='/etc/hosts'
 
 Next we will modify the client confg to configure routing and point at the correct endpoint for our websockets tunnel. (Or cheat, and look at the [example config](./wss.conf))
 
-1. Ensure the `Endpoint` directive is pointing at `127.0.0.1:51820`
+1. Ensure the `Endpoint` directive is pointing at `127.0.0.1:64451`
 2. Add the following lines to the `[Interface]` section:
 
 ```
