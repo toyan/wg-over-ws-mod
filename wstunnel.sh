@@ -80,7 +80,7 @@ maybe_update_host () {
 
 launch_wstunnel () {
     local host=${REMOTE_HOST}
-    local rport=${REMOTE_PORT:-51820}
+    local rport=${REMOTE_PORT:-64451}
     local wssport=${WSS_PORT:-443}
     local lport=${LOCAL_PORT:-${rport}}
     local prefix=${WS_PREFIX:-"wstunnel"}
@@ -119,8 +119,7 @@ pre_up () {
     remote_ip=$(dig +short "${remote}")
 
     if [[ -z "${remote_ip}" ]]; then
-        echo "[#] Can't resolve ${remote}"
-        exit 1
+        remote_ip=${remote}
     fi
 
     if [[ -f "${hosts_file}" ]]; then
